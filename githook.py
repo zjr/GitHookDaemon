@@ -36,7 +36,6 @@ class Hooks:
         if (dataJ['repository']['name'] == 'commer' and
             dataJ['ref'] == 'refs/heads/master'):
                 os.chdir('/home/commer/')
-                del os.environ['GIT_DIR']
                 check_call([
                     'git',
                     'pull'
@@ -66,6 +65,7 @@ class Hooks:
                     'git',
                     'pull'
                 ])
+                del os.environ['GIT_DIR']
                 OwnSet('acclaim', '.')
                 PermSet('.')
                 os.chdir('/')
