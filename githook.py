@@ -68,6 +68,7 @@ class Hooks:
                 del os.environ['GIT_DIR']
                 OwnSet('acclaim', '.')
                 PermSet('.')
+		os.chmod('nearby.py', 0o755)
                 os.chdir('/')
 
 if __name__ == '__main__':
