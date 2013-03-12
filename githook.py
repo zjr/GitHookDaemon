@@ -74,11 +74,13 @@ class Hooks:
                 dataJ['ref'] == 'refs/heads/master'):
             os.chdir('/home/lompoc/public_html')
             os.environ['GIT_DIR'] = '../repo'
+            os.environ['GIT_WORK_TREE'] = '.'
             check_call([
                 'git',
                 'pull'
             ])
             del os.env['GIT_DIR']
+            del os.env['GIT_WORK_TREE']
             OwnSet('lompoc', '.')
             PermSet('.')
             os.chdir('/')
