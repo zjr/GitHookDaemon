@@ -70,6 +70,18 @@ class Hooks:
             PermSet('.')
             os.chmod('nearby.py', 0o755)
             os.chdir('/')
+        elif (dataJ['repository']['name'] == 'lompoc' and
+                dataJ['ref'] == 'refs/heads/master'):
+            os.chdir('/home/lompoc/public_html')
+            os.environ['GIT_DIR'] = '../repo'
+            check_call([
+                'git',
+                'pull'
+            ])
+            del os.env['GIT_DIR']
+            OwnSet('commer', '.')
+            PermSet('.')
+            os.chdir('/')
 
 if __name__ == '__main__':
     app.run()
