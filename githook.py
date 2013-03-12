@@ -79,7 +79,7 @@ class Hooks:
                 'pull'
             ])
             del os.env['GIT_DIR']
-            OwnSet('commer', '.')
+            OwnSet('lompoc', '.')
             PermSet('.')
             os.chdir('/')
 
