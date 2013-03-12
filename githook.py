@@ -79,8 +79,8 @@ class Hooks:
                 'git',
                 'pull'
             ])
-            del os.env['GIT_DIR']
-            del os.env['GIT_WORK_TREE']
+            del os.environ['GIT_DIR']
+            del os.environ['GIT_WORK_TREE']
             OwnSet('lompoc', '.')
             PermSet('.')
             os.chdir('/')
